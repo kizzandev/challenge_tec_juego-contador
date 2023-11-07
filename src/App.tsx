@@ -33,7 +33,7 @@ export default function App() {
       const interval = setInterval(() => {
         setcuentaRegresivaText((prevText) => {
           if (prevText === 'Preparados') return 'Listos';
-          if (cuentaRegresivaText === 'Listos') return 'Ya';
+          if (prevText === 'Listos') return 'Ya';
           return prevText;
         });
 
@@ -62,12 +62,13 @@ export default function App() {
   return (
     <>
       <div className="wrapper">
-        <div>
-          <h1 className="text-center">JuegoContador</h1>
-          <h3 className="text-center">Record: {maxScore}</h3>
-          <p className="text-center">Puntaje: {score}</p>
-          {<p className="text-center">Tiempo: {countdown}</p>}
-        </div>
+        <span className="text-center">
+          <h1>JuegoContador</h1>
+          <h3>Record: {maxScore}</h3>
+          <p>Puntaje: {score}</p>
+          <p>Tiempo: {countdown}</p>
+        </span>
+
         <button
           id="initBtn"
           className={gameStarted ? 'btn-disabled' : ''}
@@ -79,6 +80,7 @@ export default function App() {
             <p className="cuenta-regresiva">{cuentaRegresivaText}</p>
           )}
         </button>
+
         <button
           id="gameBtn"
           className={gameStarted ? '' : 'btn-disabled'}
