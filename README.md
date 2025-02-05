@@ -34,7 +34,3 @@ pnpm install
 ```bash
 pnpm run dev
 ```
-
-## Notas
-
-- Únicamente la descripción fue hecha con AI.
